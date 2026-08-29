@@ -3,8 +3,8 @@
 data/estimates.json (current-analysis) or data/estimates_replication.json
 (--replication).
 
-Model (Kiley 2022, FEDS 2022-016, equation 1; cross-checked against
-reference/replication_pkg/bayesm_final.m):
+Model (Kiley 2022, FEDS 2022-016, equation 1; cross-checked against the
+author's own replication code):
 
   dp(t) = b0 + b1 * dp_avg12(t) + a * ur_lag1(t) + e(t)
 
@@ -18,13 +18,13 @@ levels of conviction in the prior:
 
   where P = loose * vcv_pre (the prior covariance, loosened by `loose`)
   and the data term is rvar_post^-1 * X_post'Y_post (the post-sample's
-  own OLS normal equations). This is the exact formula bayesm_final.m
-  computes (`B_post1`) -- verified line-by-line against that script, not
-  independently re-derived. `loose = (1-w)/w` for the paper's four prior
-  weights w = 0.5, 0.2, 0.05, ~0 (loose = 1, 4, 19, 10000).
+  own OLS normal equations). This is the exact formula the author's own
+  code computes (`B_post1`) -- verified line-by-line against that code,
+  not independently re-derived. `loose = (1-w)/w` for the paper's four
+  prior weights w = 0.5, 0.2, 0.05, ~0 (loose = 1, 4, 19, 10000).
 
 NOTE on the intercept: the FEDS notes' prose says "a constant term is
-suppressed" in equation (1), but bayesm_final.m's `X_all` includes a
+suppressed" in equation (1), but the author's own code includes a
 column of ones (`c_all`) and reports/uses `B_all(1)` etc. as a real
 intercept throughout. The code is the ground truth for replication here;
 an intercept is included. This is a known prose/code discrepancy, not a
@@ -32,20 +32,20 @@ bug introduced by this pipeline.
 
 --replication: fixed sample matching Kiley (2022a) exactly -- "pre" is
   everything before Jan 2000, "post" is Jan 2000 through Dec 2019 (data
-  truncated at 2019-12-01 throughout, matching bayes_2021m.mat's
+  truncated at 2019-12-01 throughout, matching the author's own
   1957:1-2019:12 pull). Checked against the paper's own Table 2 by
   run_replication.py.
 
 default (current analysis): "post" expands from Jan 2000 through the
   latest available month -- an explicit user choice (2026-08-29),
   matching the papers' own prose ("uses data from 2000-23" in the 2023
-  update) over what reference/replication_pkg/bayesm_final_june2023.m
-  literally computes (a rolling trailing-240-month "post" window, which
-  would drop 2000-2002 once the sample runs past ~2020) -- that
-  hardcoded 240 looks like an unrefreshed magic number carried over from
-  the original 2022 script (where trailing-240-months and "since Jan
-  2000" coincided only because the sample happened to end exactly Dec
-  2019), not a deliberate rolling-window design.
+  update) over what the paper's own June-2023 update code literally
+  computes (a rolling trailing-240-month "post" window, which would drop
+  2000-2002 once the sample runs past ~2020) -- that hardcoded 240 looks
+  like an unrefreshed magic number carried over from the original 2022
+  code (where trailing-240-months and "since Jan 2000" coincided only
+  because the sample happened to end exactly Dec 2019), not a deliberate
+  rolling-window design.
 """
 import argparse
 import json

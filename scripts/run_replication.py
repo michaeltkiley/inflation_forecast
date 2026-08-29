@@ -11,9 +11,9 @@ The paper reports values to 2 decimal places and uses a data vintage
 current as of early 2022; ours re-pulls today's latest-revised FRED data
 (and starts one month later -- Feb 1958 vs. the paper's Jan 1958, since
 FRED's public CPILFESL apparently doesn't reach back quite as far as the
-FAME `cpixfe` mnemonic the paper's own code pulled from), so exact matches
-aren't expected -- tolerances below are set to flag genuine discrepancies
-while tolerating that level of vintage/sample drift.
+series the paper's own code pulled from), so exact matches aren't
+expected -- tolerances below are set to flag genuine discrepancies while
+tolerating that level of vintage/sample drift.
 """
 import subprocess
 import sys

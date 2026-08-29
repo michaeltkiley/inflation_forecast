@@ -5,28 +5,22 @@ data/fred.duckdb (00_ingest_fred.py), writing data/observables.csv.
 Variable construction follows Kiley (2022), "Anchored or Not: How Much
 Information Does 21st Century Data Contain on Inflation Dynamics?", FEDS
 2022-016 (reference/ijcb-*.pdf), Section 2, equation (1) --
-cross-checked directly against the author's own replication code
-(reference/replication_pkg/getdat_m.inp, bayesm_final.m):
+cross-checked directly against the author's own replication code:
 
   dp        Delta p(t): core CPI inflation, monthly, annualized --
-            1200*log(CPILFESL(t)/CPILFESL(t-1)), percent. Matches
-            getdat_m.inp's `dp=1200*log(cpixfe[t]/cpixfe[t-1])` exactly
-            (CPILFESL is FRED's public equivalent of the FAME `cpixfe`
-            mnemonic).
+            1200*log(CPILFESL(t)/CPILFESL(t-1)), percent, exactly
+            matching the original paper's own construction.
   dp_avg12  sum_{j=1}^{12} Delta p(t-j) / 12: backward 12-month average
             of dp, lagged one month relative to dp(t) itself -- the
             right-hand-side persistence regressor in equation (1).
-            bayesm_final.m builds this as four separate 3-month blocks
-            (dpl1..dpl4) averaged together; algebraically identical to a
-            single 12-month backward average, confirmed by construction
+            Algebraically identical to the original paper's own
+            four-3-month-block construction, confirmed by construction
             (each block is a plain 3-month moving average of dp, and the
             four blocks tile lags 1-12 with no overlap).
   ur        u(t): the unemployment rate itself (UNRATE), for reference.
   ur_lag1   u(t-1): one-month-lagged unemployment rate -- the Phillips
-            curve slope regressor in equation (1). bayesm_final.m
-            constructs this via an index offset (`ur=xx(13:end-1,3)`)
-            that lines up with dp(t)'s own offset (`dp=xx(14:end,2)`),
-            i.e. ur one row earlier than dp -- confirmed to be u(t-1).
+            curve slope regressor in equation (1), confirmed to line up
+            with dp(t) the same way the original paper's own code does.
 
 Sample starts once dp_avg12 has a full 12 months of prior dp behind it
 (dp itself needs one prior CPI observation) -- i.e. 13 months after the

@@ -59,7 +59,7 @@ def recursive_forecast(dp_hist: pd.Series, beta: dict, exog_fixed: dict, horizon
     backward-looking term: the trailing `persistence_lags`-month average of
     the dp path itself (mixing real history and this function's own prior
     forecast steps), recomputed and fed back in at every step -- matching
-    reference/replication_pkg/bayesm_final_forecast.m's recursion exactly.
+    the original paper's own forecast recursion exactly.
     If `persistence_key` is absent from `beta` (e.g. the "pure" expectations
     spec, which has no lagged-inflation term at all), there is no such
     feedback loop, and every forecast month is identical: b0 plus the fixed

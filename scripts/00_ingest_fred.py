@@ -5,11 +5,10 @@ Uses FRED's public fredgraph.csv endpoint (no API key required), latest
 revised vintage only -- matching ../output_gap's choice.
 
 CPILFESL: CPI for All Urban Consumers, Less Food and Energy (core CPI),
-  SA, monthly index. Matches getdat_m.inp's FAME series `cpixfe` in
-  Kiley's own replication package (reference/replication_pkg/getdat_m.inp:
-  "dp=1200*log(cpixfe[t]/cpixfe[t-1])").
-UNRATE: Civilian Unemployment Rate, SA, monthly. Matches `ruc.m` in the
-  same replication package.
+  SA, monthly index -- the same measure the original paper's own code
+  computed dp from (dp = 1200 * log-difference of the core CPI index).
+UNRATE: Civilian Unemployment Rate, SA, monthly -- the same measure the
+  original paper's own code used.
 MICH: University of Michigan Survey of Consumers, median expected price
   change over the next 12 months. Monthly, 1978-present. Used by the
   expectations-augmented Phillips curve (04_estimate_expectations.py),

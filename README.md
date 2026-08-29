@@ -55,9 +55,9 @@ highly persistent one has `b1` near 1.
 
 **Intercept**: the FEDS notes' prose says "a constant term is
 suppressed" in equation (1), but the author's own replication code
-(`reference/replication_pkg/bayesm_final.m`) includes one throughout
-(`c_all`/`B_all(1)` etc.). The code is ground truth here -- an intercept
-is included. Documented discrepancy, not a bug in this pipeline.
+includes one throughout (`c_all`/`B_all(1)` etc.). The code is ground
+truth here -- an intercept is included. Documented discrepancy, not a
+bug in this pipeline.
 
 ## Pipeline
 
@@ -104,9 +104,8 @@ the sibling dashboards' convention).
 ## Sample windows
 
 - **Pre**: everything before Jan 2000 (starts as early as CPILFESL/UNRATE
-  allow a full trailing window -- FRED's public `CPILFESL` starts close
-  to but not identical with the FAME `cpixfe` mnemonic the original
-  paper's code pulled from, `reference/replication_pkg/getdat_m.inp`; a
+  allow a full trailing window -- FRED's public `CPILFESL` starts one
+  month later than the series the original paper's code pulled from; a
   one-month difference here doesn't affect the replication checks below).
   Fixed in both `--replication` and current-analysis modes.
 - **Post, `--replication`**: Jan 2000-Dec 2019, matching Kiley (2022a)'s
@@ -114,22 +113,22 @@ the sibling dashboards' convention).
 - **Post, current analysis**: Jan 2000 through the latest available
   month -- **expanding**, an explicit user choice (2026-08-29). This
   matches the papers' own prose (the 2023 update describes "uses data
-  from 2000-23") over what `reference/replication_pkg/bayesm_final_june2023.m`
-  literally computes: that script hardcodes "post" as the *trailing 240
-  months*, which only coincided with "since Jan 2000" because the 2022
-  vintage's sample happened to end exactly Dec 2019. Once the sample
-  runs past ~2020, a literal reading of that script would silently drop
-  2000-2002 from the informative window every month going forward --
+  from 2000-23") over what the original paper's own June-2023 update
+  code literally computes: that code hardcodes "post" as the *trailing
+  240 months*, which only coincided with "since Jan 2000" because the
+  2022 vintage's sample happened to end exactly Dec 2019. Once the
+  sample runs past ~2020, a literal reading of that code would silently
+  drop 2000-2002 from the informative window every month going forward --
   read as an unrefreshed magic number carried over from the original
-  script, not a deliberate rolling-window design.
+  code, not a deliberate rolling-window design.
 
 ## Forecast
 
 `scripts/03_forecast.py` simulates each of the four posterior scenarios
 forward month by month with **coefficients held fixed** (not
 re-estimated at each step) and **unemployment held at its last observed
-value** for the whole horizon -- exactly
-`reference/replication_pkg/bayesm_final_forecast.m`'s recursion:
+value** for the whole horizon -- exactly the original paper's own
+forecast recursion:
 
 ```
 dp(t) = b0 + b1 * avg(dp(t-12..t-1)) + a * ur_fixed
@@ -156,8 +155,7 @@ table's published figures.
 
 Table 2's coefficients replicate almost exactly (within 0.02 on `b1`
 across all four weights) -- confirmed further by loading the author's
-own saved posterior coefficients directly from
-`reference/replication_pkg/bayes_2021m.mat` (`B_post1`) and finding them
+own saved posterior coefficients directly (`B_post1`) and finding them
 within 0.003 of this pipeline's independently re-estimated values.
 
 The Table 3 forecast check runs consistently higher than the paper --

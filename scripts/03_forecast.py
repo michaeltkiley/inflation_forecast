@@ -3,8 +3,8 @@
 outputs/forecast.csv (current-analysis) or outputs/forecast_replication.csv
 (--replication).
 
-Matches reference/replication_pkg/bayesm_final_forecast.m's forecast
-recursion exactly: for each of the four posterior weight scenarios in
+Matches the original paper's own forecast recursion exactly: for each
+of the four posterior weight scenarios in
 data/estimates*.json, the coefficients are held FIXED (not re-estimated
 at each step) and simulated forward month by month --
 
