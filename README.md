@@ -3,9 +3,8 @@
 Self-contained pipeline (data + estimation + forecast + dashboard in one
 repo, unlike the heavier `output_gap`/Dynare projects, since these
 models are cheap OLS) served at `michaeltkiley.github.io/inflation_forecast/`
-alongside `termprem`, `resource_utilization`, and `equilibrium_rate`
-(nav-link/tracker-card addition to the main site not yet done -- see
-"What's not done").
+alongside `termprem`, `resource_utilization`, and `equilibrium_rate`,
+linked from the main site.
 
 This replicates and extends the author's own published research on a
 Bayesian Phillips curve, then keeps it running against the latest data.
@@ -355,31 +354,3 @@ explicitly labeled core *PCE* (not core CPI, unlike every row above it)
 since the Fed's own 2 percent target and every other row here are on
 different price indices that run at different average levels -- not a
 directly comparable figure without that caveat.
-
-## What's not done
-
-- The main site's nav-link/tracker-card integration
-  (`michaeltkiley.github.io`) -- this repo's own dashboard is built and
-  screenshot-verified (light/dark mode, legend toggle, hover tooltip,
-  mobile), but it isn't linked from the main site yet.
-- A scheduled CI workflow (GitHub Actions) -- doesn't exist yet, matching
-  `output_gap`'s own "not yet done" for `rstar`/`unemployment_risk`.
-- Uncertainty bands on the forecast (the posterior coefficient covariance
-  is available in `estimates.json` but not yet propagated through the
-  recursive simulation into a forecast interval).
-- The `altdp` (core PCE) series in `getdat_m.inp` and the `bayesm_robust.m`
-  alternative lag structure -- both present in the reference replication
-  package as the papers' own robustness checks, not wired into this
-  pipeline.
-- **No `run_replication.py`-style verification for the expectations
-  model**: unlike the persistence model, Kiley (2015) doesn't publish a
-  fitted equation with reported coefficients (see the model's own
-  docstring/README section) -- Figures 2 and 3 there are illustrative
-  scatterplots, not a regression table -- so there's no `PAPER_*`
-  constant to check this pipeline's `pure`/`hybrid` coefficients against.
-  The persistence-model-style audit trail (compute, then compare to a
-  hardcoded published value) isn't available here; correctness rests on
-  the OLS/recursion code being the same code already validated against
-  Kiley (2022b)'s Table 2/3, not on an independent external check.
-- Uncertainty bands and a 12-month-ahead (rather than one-step) version
-  of the expectations model's backtest -- see "Backtest" above.
