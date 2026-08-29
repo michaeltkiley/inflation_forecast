@@ -1,0 +1,4 @@
+requests
+duckdb
+pandas
+numpy
