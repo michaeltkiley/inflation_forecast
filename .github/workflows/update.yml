@@ -1,0 +1,57 @@
+name: Update inflation forecast
+
+on:
+  schedule:
+    # 14:23 UTC on weekdays (10:23am EDT / 9:23am EST): after FRED posts the
+    # 8:30am ET CPI and unemployment releases, so a release shows up the same day.
+    - cron: "23 14 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-inflation-forecast
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Download data, estimate, forecast and build the dashboard
+        run: |
+          set -e
+          for s in 00_ingest_fred 01_build_observables 02_estimate 03_forecast \
+                   04_estimate_expectations 05_forecast_expectations \
+                   06_backtest_expectations 07_ingest_spf 08_build_dashboard; do
+            echo "::group::$s"
+            python scripts/$s.py
+            echo "::endgroup::"
+          done
+
+      - name: Commit the dashboard if the numbers changed
+        run: |
+          # The page stamps the build date ("as_of"); ignore it so a run with
+          # no new data makes no commit.
+          strip() { sed -E 's/"as_of": "[0-9-]+"/"as_of": ""/'; }
+          if [ "$(git show HEAD:docs/index.html | strip)" = "$(strip < docs/index.html)" ]; then
+            echo "No new data"
+            git checkout -- docs/index.html
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/index.html
+          git commit -m "Update inflation forecast $(date -u +%Y-%m-%d)"
+          git push
