@@ -9,6 +9,9 @@ linked from the main site.
 This replicates and extends the author's own published research on a
 Bayesian Phillips curve, then keeps it running against the latest data.
 
+The page also has a **Nowcast** tab: a daily bottom-up nowcast of monthly PCE and CPI inflation (the `nowcast/` folder, with its own README, daily workflow
+`.github/workflows/nowcast.yml` and `nowcast/DEPLOY.md`). The forecast pipeline below is unchanged; both feed one page, `docs/index.html`.
+
 Based on:
 - Kiley, M. T. (2022), "Anchored or Not: How Much Information Does 21st
   Century Data Contain on Inflation Dynamics?", FEDS 2022-016, published

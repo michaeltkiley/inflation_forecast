@@ -1,0 +1,86 @@
+<div id="panel-nowcast" role="tabpanel" aria-labelledby="tab-nowcast">
+  <p class="nc-loading" id="nc-loading">Loading the nowcast&hellip;</p>
+  <noscript><p class="nc-muted">The nowcast tab draws its charts with JavaScript.</p></noscript>
+  <div class="nc-body" id="nc-body" hidden>
+    <div>
+      <h2 class="panel-title">Daily Nowcast of PCE and CPI Inflation</h2>
+      <p class="subtitle">Each month&rsquo;s inflation, estimated from the bottom up as BLS and BEA data arrive.</p>
+      <p class="citation">A bottom-up estimate of monthly PCE and CPI inflation. BEA builds the PCE price index from about 220 components, almost all priced with a BLS index that is public before BEA publishes. Each component switches from forecast to published price data as BLS releases CPI, PPI and import prices, so the estimate sharpens through the month. The Cleveland Fed&rsquo;s nowcast is shown alongside for comparison.</p>
+      <div class="nc-meta" id="nc-meta"></div>
+    </div>
+
+    <section class="card nc-hero" id="nc-hero" aria-live="polite"></section>
+    <div class="nc-kpis" id="nc-kpis"></div>
+    <details class="tv" id="nc-tiletable"><summary>Show the current nowcasts as a table</summary><div class="scroll" id="nc-tiletable-body"></div></details>
+
+    <div id="nc-path">
+      <div class="nc-filters">
+        <span><span class="flabel">Measure</span><span class="seg" id="nc-f-measure" role="group" aria-label="Measure"></span></span>
+        <span><span class="flabel">Month</span><span class="seg" id="nc-f-month" role="group" aria-label="Month"></span></span>
+      </div>
+      <section class="card" style="margin-top:10px">
+        <div class="card-head"><div>
+          <div class="card-title">How the nowcast evolves through the month</div>
+          <div class="card-caption">Each dot is one of our daily runs (the record starts on the first run). The line is the Cleveland Fed&rsquo;s daily nowcast for the same month. Once the statistic is published, the released figure appears as a gray dot.</div>
+        </div></div>
+        <div class="nc-legend" id="nc-path-legend"></div>
+        <div class="nc-chart" id="nc-path-chart" tabindex="0" role="img"></div>
+        <p class="nc-cap" id="nc-path-cap"></p>
+        <details class="tv"><summary>Show this chart as a table</summary><div class="scroll" id="nc-path-table"></div></details>
+      </section>
+    </div>
+
+    <section class="card" id="nc-changed">
+      <div class="card-head"><div><div class="card-title">What changed since the last run</div></div></div>
+      <div id="nc-changed-body"></div>
+    </section>
+
+    <div id="nc-comp">
+      <div class="card-head" style="margin-bottom:8px"><div>
+        <div class="card-title">What is driving the current month</div>
+        <div class="card-caption" id="nc-comp-lede"></div>
+      </div></div>
+      <div class="nc-cols">
+        <div class="card" id="nc-comp-groups"></div>
+        <div class="card" id="nc-comp-leaves"></div>
+      </div>
+    </div>
+
+    <div id="nc-track">
+      <div class="nc-filters"><span><span class="flabel">Measure</span><span class="seg" id="nc-t-measure" role="group" aria-label="Track record measure"></span></span></div>
+      <section class="card" style="margin-top:10px">
+        <div class="card-head"><div>
+          <div class="card-title">Track record</div>
+          <div class="card-caption">How the same method would have done in past months, against BEA&rsquo;s first published figure. This is a backtest, not a live record: see the notes below.</div>
+        </div></div>
+        <div class="nc-legend" id="nc-track-legend"></div>
+        <div class="nc-chart" id="nc-track-chart" tabindex="0" role="img"></div>
+        <p class="nc-cap" id="nc-track-cap"></p>
+        <details class="tv"><summary>Show this chart as a table</summary><div class="scroll" id="nc-track-table"></div></details>
+      </section>
+      <section class="card" style="margin-top:12px">
+        <div class="card-head"><div>
+          <div class="card-title">Average miss against BEA&rsquo;s first print</div>
+          <div class="card-caption" id="nc-mae-cap"></div>
+        </div></div>
+        <div class="scroll"><table id="nc-mae"></table></div>
+        <p class="nc-cap" id="nc-mae-notes"></p>
+      </section>
+    </div>
+
+    <div class="methodology nc-methods" id="nc-methods">
+      <div class="methods-label">Nowcast: method, data and limits</div>
+      <div><b>Method</b> &mdash; a PCE component whose BLS source series is out is translated into its PCE counterpart (blends of several series are fitted to BEA&rsquo;s own history; seasonal adjustment is redone with X-13 where BEA does it itself). A component not yet released is forecast by the average of its 3-month and 12-month mean change; gasoline comes from weekly retail prices. Components are weighted by last month&rsquo;s spending shares. CPI is built the same way from 71 items weighted by BLS relative importance.</div>
+      <div><b>What to expect</b> &mdash; before CPI is released, accuracy is about the same as a simple regression baseline (the &ldquo;DMS baseline&rdquo; in the table, a simplified version of the Knotek&ndash;Zaman model): the error is mostly noise in individual components that no available indicator predicts. The gain comes after CPI and PPI arrive. BEA&rsquo;s first print differs from its later revised value by about 5 basis points on average for core PCE, which no model can recover.</div>
+      <div><b>Backtest</b> &mdash; <i>partly real-time</i>: targets are BEA&rsquo;s first prints, but BEA&rsquo;s component history and spending shares are at today&rsquo;s vintage (BEA&rsquo;s detail tables are not archived) and seasonal factors use the full sample. The Cleveland Fed figures are genuinely real-time. A true real-time record builds from the first daily run. Months with missing data (for example no October 2025 CPI) are filled from earlier data.</div>
+      <div class="methods-label">Data and credits</div>
+      <div><b>Data</b> &mdash; <a href="https://www.bls.gov/">U.S. Bureau of Labor Statistics</a> (CPI, PPI, import prices, unemployment, CPI relative importance); <a href="https://www.bea.gov/">U.S. Bureau of Economic Analysis</a> (personal consumption expenditures); U.S. Energy Information Administration energy prices via <a href="https://fred.stlouisfed.org/">FRED</a>; first-published values from ALFRED, Federal Reserve Bank of St. Louis. None of these agencies endorses this site.</div>
+      <div><b>Source map</b> &mdash; the map from each PCE component to its BLS source series was adapted from <a href="https://github.com/econvitals/replication">econvitals/replication</a> (CC0) and checked against BEA&rsquo;s Table 2.4.4U-D, &ldquo;Price Indexes for PCE: Source Data,&rdquo; with one small correction (the seasonal treatment of two telephone-service lines).</div>
+      <div id="nc-cle-credit"><b>Cleveland Fed</b> &mdash; </div>
+      <div class="methods-label">Related work by others</div>
+      <div><a href="https://econvitals.org/">Econvitals</a>: a PCE tracking estimate built from BLS source data. <a href="https://www.chicagofed.org/publications/chicago-fed-letter/2026/529">Flash PCE: A Mid-Month Inflation Nowcast</a> (Chicago Fed Letter No. 529, September 2026): a mid-month PCE nowcast from CPI and PPI. Linked for readers&rsquo; reference only; none of their figures are shown here.</div>
+      <div class="nc-muted" id="nc-foot-built"></div>
+    </div>
+  </div>
+  <div id="nc-tip" role="tooltip"></div>
+</div>

@@ -1,0 +1,4 @@
+.env
+data/
+archive/
+__pycache__/

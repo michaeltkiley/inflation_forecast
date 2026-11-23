@@ -1,0 +1,82 @@
+/* Nowcast tab. Everything is scoped under #panel-nowcast so it cannot affect the Forecast tab; page tokens (--ink, --surface-card, ...) come from the shared :root. */
+#panel-nowcast {
+  --ours: #1c5cab; --ours-tint: #a9c3e2; --cle: #eb6834; --nc-neutral: #4b5568; --nc-baseline: #8a93a3; --nc-muted: #6b7587;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) #panel-nowcast { --ours: #5c98dd; --ours-tint: #44709f; --cle: #d95926; --nc-neutral: #b7c0cc; --nc-baseline: #7c8798; --nc-muted: #8d97a8; }
+}
+:root[data-theme="dark"] #panel-nowcast { --ours: #5c98dd; --ours-tint: #44709f; --cle: #d95926; --nc-neutral: #b7c0cc; --nc-baseline: #7c8798; --nc-muted: #8d97a8; }
+#panel-nowcast { display: flex; flex-direction: column; gap: 22px; }
+#panel-nowcast[hidden] { display: none; }
+#panel-nowcast .nc-body { display: flex; flex-direction: column; gap: 22px; }
+#panel-nowcast .nc-body[hidden], #panel-nowcast .nc-loading[hidden] { display: none; }
+#panel-nowcast .nc-loading { margin: 0; color: var(--ink-muted); font-size: 14px; }
+#panel-nowcast .nc-intro { margin: 0; max-width: 70ch; font-size: 14px; line-height: 1.55; color: var(--ink-secondary); }
+#panel-nowcast .nc-meta { margin: 6px 0 0; display: flex; flex-wrap: wrap; gap: 2px 18px; font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 12px; color: var(--ink-muted); }
+#panel-nowcast .nc-meta b { font-weight: 500; color: var(--ink-secondary); }
+#panel-nowcast .nc-eyebrow { font-size: 13px; color: var(--ink-secondary); font-weight: 500; }
+#panel-nowcast .nc-hero { display: grid; gap: 4px; }
+#panel-nowcast .nc-fig { font: 600 clamp(52px, 11vw, 76px)/1 "IBM Plex Sans", system-ui, sans-serif; letter-spacing: -.02em; margin: 2px 0; color: var(--ink); }
+#panel-nowcast .nc-fig small { font-size: .42em; font-weight: 500; color: var(--ink-secondary); margin-left: 4px; letter-spacing: 0; }
+#panel-nowcast .nc-herosub { font-size: 14.5px; color: var(--ink-secondary); }
+#panel-nowcast .nc-heronote { margin: 6px 0 0; font-size: 13.5px; color: var(--ink-secondary); max-width: 64ch; }
+#panel-nowcast .nc-kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px; }
+#panel-nowcast .nc-tile { background: var(--surface-tile); border: 1px solid var(--rule-soft); border-radius: 12px; padding: 12px 14px; }
+#panel-nowcast .nc-tile .lab { font-size: 12.5px; color: var(--ink-secondary); }
+#panel-nowcast .nc-tile .val { font: 600 26px/1.15 "IBM Plex Sans", system-ui, sans-serif; margin: 2px 0; letter-spacing: -.01em; color: var(--ink); }
+#panel-nowcast .nc-tile .val small { font-size: 13px; font-weight: 500; color: var(--ink-secondary); margin-left: 3px; }
+#panel-nowcast .nc-tile .cmp { font-size: 12.5px; color: var(--ink-secondary); display: flex; align-items: center; gap: 4px 14px; flex-wrap: wrap; }
+#panel-nowcast .nw { white-space: nowrap; }
+#panel-nowcast .key-line { display: inline-block; width: 14px; height: 0; border-top: 2px solid; vertical-align: middle; }
+#panel-nowcast .key-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; vertical-align: middle; }
+#panel-nowcast details.tv { font-size: 13px; }
+#panel-nowcast details.tv summary { cursor: pointer; color: var(--accent-text); width: fit-content; margin-top: 8px; }
+#panel-nowcast .scroll { overflow-x: auto; }
+#panel-nowcast table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+#panel-nowcast th, #panel-nowcast td { padding: 7px 10px; text-align: left; border-bottom: 1px solid var(--rule-soft); white-space: nowrap; color: var(--ink); }
+#panel-nowcast th { font-weight: 600; color: var(--ink-secondary); font-size: 11px; letter-spacing: .05em; text-transform: uppercase; }
+#panel-nowcast td.n, #panel-nowcast th.n { text-align: right; font-variant-numeric: tabular-nums; }
+#panel-nowcast td.best { font-weight: 600; }
+#panel-nowcast .nc-filters { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: center; }
+#panel-nowcast .seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 9px; overflow: hidden; background: var(--surface-card); }
+#panel-nowcast .seg button { font: 500 13px "IBM Plex Sans", system-ui, sans-serif; padding: 7px 13px; border: 0; border-right: 1px solid var(--rule); background: transparent; color: var(--ink-secondary); cursor: pointer; }
+#panel-nowcast .seg button:last-child { border-right: 0; }
+#panel-nowcast .seg button:hover { background: var(--accent-lt); }
+#panel-nowcast .seg button[aria-pressed="true"] { background: var(--accent-lt); color: var(--accent-text); font-weight: 600; }
+#panel-nowcast .seg button:focus-visible, #panel-nowcast details summary:focus-visible, #panel-nowcast .brow:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 1px; }
+#panel-nowcast .flabel { font-size: 12.5px; color: var(--ink-secondary); margin-right: 6px; }
+#panel-nowcast .nc-legend { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 12.5px; color: var(--ink-secondary); margin: 0 0 8px; }
+#panel-nowcast .nc-legend span { display: inline-flex; align-items: center; gap: 6px; }
+#panel-nowcast .nc-chart { position: relative; }
+#panel-nowcast .nc-chart:focus-visible { outline: 2px solid var(--accent-text); outline-offset: 2px; border-radius: 6px; }
+#panel-nowcast .nc-chart svg { display: block; width: 100%; height: auto; touch-action: pan-y; }
+#panel-nowcast .nc-chart svg text { font-family: "IBM Plex Sans", system-ui, sans-serif; fill: var(--nc-muted); font-size: 11.5px; }
+#panel-nowcast .nc-chart svg text.endlab { fill: var(--ink-secondary); font-size: 12px; }
+#panel-nowcast .grid line { stroke: var(--rule-soft); stroke-width: 1; }
+#panel-nowcast .axis line { stroke: var(--rule); stroke-width: 1; }
+#nc-tip { position: fixed; pointer-events: none; z-index: 60; background: var(--surface-card); border: 1px solid var(--rule); border-radius: 9px; padding: 8px 10px; box-shadow: 0 6px 20px -8px rgba(16,21,29,.35); font-size: 12.5px; color: var(--ink); max-width: 260px; opacity: 0; transition: opacity .08s; }
+#nc-tip.on { opacity: 1; }
+#nc-tip .th { color: var(--ink-secondary); margin-bottom: 4px; }
+#nc-tip .tr { display: flex; align-items: center; gap: 7px; white-space: nowrap; }
+#nc-tip .tr b { font-weight: 600; margin-left: auto; padding-left: 12px; font-variant-numeric: tabular-nums; }
+#nc-tip .key-line { display: inline-block; width: 14px; height: 0; border-top: 2px solid; } #nc-tip .key-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; }
+#panel-nowcast .nc-cap { font-size: 12px; color: var(--nc-muted); margin: 8px 0 0; max-width: 90ch; }
+#panel-nowcast .nc-cols { display: grid; grid-template-columns: 1fr; gap: 14px; align-items: start; }
+@media (min-width: 860px) { #panel-nowcast .nc-cols { grid-template-columns: 1fr 1.3fr; } }
+#panel-nowcast .brow { display: grid; grid-template-columns: minmax(96px, 38%) 1fr; align-items: center; gap: 8px; padding: 3px 0; border-radius: 6px; }
+#panel-nowcast .brow:hover, #panel-nowcast .brow:focus-visible { background: var(--surface-tile); outline: none; }
+#panel-nowcast .brow .bl { font-size: 12.5px; color: var(--ink-secondary); line-height: 1.25; overflow-wrap: anywhere; }
+#panel-nowcast .brow .bl i { font-style: normal; color: var(--nc-muted); }
+#panel-nowcast .track { position: relative; height: 22px; }
+#panel-nowcast .zero { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--rule); }
+#panel-nowcast .bar { position: absolute; top: 3px; height: 16px; background: var(--ours); }
+#panel-nowcast .bar.est { background: var(--ours-tint); }
+#panel-nowcast .bar.pos { border-radius: 0 4px 4px 0; } #panel-nowcast .bar.neg { border-radius: 4px 0 0 4px; }
+#panel-nowcast .bval { position: absolute; top: 2px; font-size: 12px; font-variant-numeric: tabular-nums; color: var(--ink-secondary); line-height: 18px; white-space: nowrap; }
+#panel-nowcast .metric { display: flex; align-items: center; gap: 8px; }
+#panel-nowcast .mbar { display: inline-block; height: 6px; border-radius: 3px; }
+#panel-nowcast .nc-sub { font: 500 14px "IBM Plex Sans", system-ui, sans-serif; margin: 0 0 8px; color: var(--ink); }
+#panel-nowcast .nc-muted { color: var(--nc-muted); margin: 0; }
+#panel-nowcast .nc-methods b { color: var(--ink-secondary); font-weight: 600; }
+#panel-nowcast .nc-methods .methods-label { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-secondary); padding-top: 6px; }
+@media (max-width: 640px) { #panel-nowcast table { font-size: 12.5px; } #panel-nowcast .nc-fig { font-size: 56px; } }

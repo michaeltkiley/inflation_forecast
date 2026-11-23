@@ -198,6 +198,9 @@ def main():
 
     template = TEMPLATE_PATH.read_text()
     html = template.replace("__DASHBOARD_DATA__", json.dumps(data))
+    # Nowcast tab: HTML, CSS and JS live in nowcast/site/ (its data, docs/data/nowcast.json, is fetched by the page at load time)
+    for placeholder, name in (("<!--__NOWCAST_HTML__-->", "nowcast.html"), ("/*__NOWCAST_CSS__*/", "nowcast.css"), ("/*__NOWCAST_JS__*/", "nowcast.js")):
+        html = html.replace(placeholder, (REPO_ROOT / "nowcast" / "site" / name).read_text())
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     OUT_PATH.write_text(html)
     print(f"Wrote {OUT_PATH}")
