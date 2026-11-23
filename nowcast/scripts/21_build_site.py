@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build docs/data/nowcast.json, the data behind the Nowcast tab of the Inflation Forecast page (docs/index.html fetches it; the page itself is built by scripts/08_build_dashboard.py
+"""Build docs/data/nowcast.json, the data behind the Nowcast tab of the Inflation Tracker page (docs/index.html fetches it; the page itself is built by scripts/08_build_dashboard.py
 at the repository root, which embeds the tab's HTML/CSS/JS from nowcast/site/). The JSON holds: current nowcast tiles (ours beside the Cleveland Fed's), each target month's daily Cleveland
 path with our run history, the component breakdown of the current PCE months, the change since the previous run (once two runs exist), and the track record (backtest vs BEA first prints from
 results/backtest_first_print.csv, with the Cleveland Fed scored on the same months). Cleveland Fed figures are shown as published with the attribution required by nowcast/docs/third_party_terms.md;

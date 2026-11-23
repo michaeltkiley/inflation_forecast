@@ -1,6 +1,6 @@
 # Inflation nowcast
 
-Daily bottom-up nowcast of monthly PCE and CPI inflation, shown in the **Nowcast** tab of the Inflation Nowcast and Forecast page
+Daily bottom-up nowcast of monthly PCE and CPI inflation, shown in the **Nowcast** tab of the Inflation Tracker page
 (https://michaeltkiley.github.io/inflation_forecast/). BEA builds the PCE price index from about 220 components, almost all priced with a BLS index that is public before BEA publishes. This
 project rebuilds that assembly: a component whose BLS source is out is translated into its PCE counterpart; a component not yet released is forecast; components are weighted by spending shares.
 CPI is built the same way from 71 items. The Cleveland Fed's nowcast is shown beside ours. Method after Knotek and Zaman (Cleveland Fed) and the Chicago Fed's Flash PCE; the source map from each PCE
