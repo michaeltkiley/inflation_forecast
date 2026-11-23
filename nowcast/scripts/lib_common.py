@@ -13,7 +13,7 @@ RAW = DATA / 'raw'
 DB = DATA / 'nowcast.duckdb'
 RESULTS = ROOT / 'results'                                                            # small committed artifacts (backtest table)
 ARCHIVE = Path(os.environ.get('NOWCAST_ARCHIVE', ROOT / 'archive'))                  # vintage archive + run history; in CI the `data` branch checkout
-SITE_JSON = ROOT.parent / 'docs' / 'data' / 'nowcast.json'                             # read by the Nowcast tab of the Inflation Forecast page
+SITE_JSON = ROOT.parent / 'docs' / 'data' / 'nowcast.json'                             # read by the Nowcast tab of the Inflation Tracker page
 
 
 def load_env():
