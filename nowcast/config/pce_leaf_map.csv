@@ -1,0 +1,221 @@
+line,bea_price_code,bea_nominal_code,label,sign,group,kind,release,series,weights,fit_start,constant,gap_proxy,damped,housing,services,used_vehicles,market_based_excluded,source_note
+7,DNDCRG,DNDCRC,New domestic autos,1,core,cpi,cpi,CUSR0000SS45011:bls,,,,,0,0,0,0,0,CPI New cars
+8,DNFCRG,DNFCRC,New foreign autos,1,core,cpi,cpi,CUSR0000SS45011:bls,,,,,0,0,0,0,0,CPI New cars
+10,IA001081,LA001081,New domestic light trucks,1,core,cpi,cpi,CUSR0000SS45021:bls,,,,,0,0,0,0,0,CPI New trucks
+11,IA001083,LA001083,New foreign light trucks,1,core,cpi,cpi,CUSR0000SS45021:bls,,,,,0,0,0,0,0,CPI New trucks
+14,DNETRG,DNETRC,Net transactions in used autos,1,core,cpi,cpi,CUSR0000SETA02:bls,,,,,0,0,0,1,0,CPI Used cars and trucks
+15,DMARRG,DMARRC,Used auto margin,1,core,cpi,cpi,CUSR0000SETA02:bls,,,,,0,0,0,1,1,CPI Used cars and trucks
+16,DREERG,DREERC,Employee reimbursement,1,core,cpi,cpi,CUSR0000SETA04:bls,,,,,0,0,0,1,1,CPI Car and truck rental
+18,DUTNRG,DUTNRC,Net transactions in used trucks,1,core,cpi,cpi,CUSR0000SETA02:bls,,,,,0,0,0,1,0,CPI Used cars and trucks
+19,DUTMRG,DUTMRC,Used truck margin,1,core,cpi,cpi,CUSR0000SETA02:bls,,,,,0,0,0,1,1,CPI Used cars and trucks
+21,DTATRG,DTATRC,Tires,1,core,cpi,cpi,CUUR0000SETC01:none,,,,,0,0,0,0,0,CPI Tires
+22,DPAARG,DPAARC,Accessories and parts,1,core,cpi,cpi,CUUR0000SS48021:none,,,,,0,0,0,0,0,CPI Vehicle parts and equipment other than tires
+25,DFNRRG,DFNRRC,Furniture,1,core,cpi,cpi,CUUR0000SEHJ:none,,,,,0,0,0,0,0,CPI Furniture and bedding
+26,DCLFRG,DCLFRC,"Clocks, lamps, lighting fixtures, and other household decorative items",1,core,cpi,cpi,CUUR0000SEHL01:none,,,,,0,0,0,0,0,"CPI Clocks, lamps, and decorator items"
+27,DFLRRG,DFLRRC,Carpets and other floor coverings,1,core,cpi,cpi,CUUR0000SEHH01:none,,,,,0,0,0,0,0,CPI Floor coverings
+28,DWCTRG,DWCTRC,Window coverings,1,core,cpi,cpi,CUUR0000SEHH02:none,,,,,0,0,0,0,0,CPI Window coverings
+30,DMHARG,DMHARC,Major household appliances,1,core,cpi,cpi,CUSR0000SEHK01:bls,,,,,0,0,0,0,0,CPI Major appliances
+31,DSEARG,DSEARC,Small electric household appliances,1,core,cpi,cpi,CUSR0000SEHK02:bls,,,,,0,0,0,0,0,CPI Other appliances
+33,DCHNRG,DCHNRC,Dishes and flatware,1,core,cpi,cpi,CUUR0000SEHL03:none,,,,,0,0,0,0,0,CPI Dishes and flatware
+34,DNECRG,DNECRC,Nonelectric cookware and tableware,1,core,cpi,cpi,CUSR0000SEHL04:bls,,,,,0,0,0,0,0,CPI Nonelectric cookware and tableware
+36,DHDWRG,DHDWRC,"Tools, hardware, and supplies",1,core,cpi,cpi,CUSR0000SEHM01:bls,,,,,0,0,0,0,0,"CPI Tools, hardware, and supplies"
+37,DLWNRG,DLWNRC,Outdoor equipment and supplies,1,core,cpi,cpi,CUUR0000SEHM02:none,,,,,0,0,0,0,0,CPI Outdoor equipment and supplies
+41,DTVSRG,DTVSRC,Televisions,1,core,cpi,cpi,CUSR0000SERA01:bls,,,,,0,0,0,0,0,CPI Televisions
+42,DOVARG,DOVARC,Other video equipment,1,core,cpi,cpi,CUSR0000SERA03:bls,,,,,0,0,0,0,0,CPI Other video equipment
+43,DAUDRG,DAUDRC,Audio equipment,1,core,cpi,cpi,CUUR0000SERA05:none,,,,,0,0,0,0,0,CPI Audio equipment
+45,DRTDRG,DRTDRC,"Audio discs, tapes, vinyl, and permanent digital downloads",1,core,cpi,cpi,CUUR0000SERA06:none,,,,,0,0,0,0,0,CPI Recorded music and music subscriptions
+46,DOVERG,DOVERC,"Video discs, tapes, and permanent digital downloads",1,core,cpi,cpi,CUUR0000SS31022:none,,,,,0,0,0,0,0,CPI Video discs and other media
+47,DCAMRG,DCAMRC,Photographic equipment,1,core,cpi,cpi,CUUR0000SS61023:none,,,,,0,0,0,0,0,CPI Photographic equipment
+49,DCPPRG,DCPPRC,Personal computers/tablets and peripheral equipment,1,core,cpi,cpi,CUUR0000SEEE01:none,,,,,0,0,0,0,0,"CPI Computers, peripherals, and smart home assistants"
+50,DCPSRG,DCPSRC,Computer software and accessories,1,core,composite,ppi,CUUR0000SEEE02:none;WPU34210401:own;WPU38110101:own,fit,2021-01,,,0,0,0,0,0,BEA Sep-2026: composite of CPI software & accessories + PPI game software publishing + PPI hosting/ASP/IT infrastructure; SA by BEA
+51,DOIPRG,DOIPRC,"Calculators, typewriters, and other information processing equipment",1,core,cpi,cpi,CUSR0000SEEE04:bls,,,,,0,0,0,0,0,"CPI Telephone hardware, calculators, and other consumer information items"
+52,DSPGRG,DSPGRC,"Sporting equipment, supplies, guns, and ammunition (part of 80)",1,core,cpi,cpi,CUUR0000SERC02:none,,,,,0,0,0,0,0,CPI Sports equipment
+54,DMCYRG,DMCYRC,Motorcycles,1,core,constant,none,,,,0.0,,0,0,0,0,0,CPI New motorcycles was discontinued (2000); BEA holds the PCE motorcycles price flat (m/m = 0 since 2025)
+55,DBCYRG,DBCYRC,Bicycles and accessories,1,core,cpi,cpi,CUUR0000SERC01:none,,,,,0,0,0,0,0,CPI Sports vehicles including bicycles
+57,DBOARG,DBOARC,Pleasure boats,1,core,cpi,cpi,CUUR0000SERC01:none,,,,,0,0,0,0,0,CPI Sports vehicles including bicycles
+58,DAIRRG,DAIRRC,Pleasure aircraft,1,core,cpi,cpi,CUUR0000SERC01:none,,,,,0,0,0,0,0,CPI Sports vehicles including bicycles
+59,DREVRG,DREVRC,Other recreational vehicles,1,core,cpi,cpi,CUUR0000SERC01:none,,,,,0,0,0,0,0,CPI Sports vehicles including bicycles
+60,DRBKRG,DRBKRC,Recreational books (part of 90),1,core,cpi,cpi,CUUR0000SERG02:none,,,,,0,0,0,0,0,CPI Recreational books
+61,DMSCRG,DMSCRC,Musical instruments (part of 80),1,core,cpi,cpi,CUUR0000SERE03:none,,,,,0,0,0,0,0,CPI Music instruments and accessories
+64,DJLYRG,DJLYRC,Jewelry,1,core,cpi,cpi,CUSR0000SEAG02:bls,,,,,0,0,0,0,0,CPI Jewelry
+65,DWTCRG,DWTCRC,Watches,1,core,cpi,cpi,CUUR0000SEAG01:none,,,,,0,0,0,0,0,CPI Watches
+67,DTMERG,DTMERC,Therapeutic medical equipment,1,core,cpi,cpi,CUUR0000SEMG:none,,,,,0,0,0,0,0,CPI Medical equipment and supplies
+68,DEYERG,DEYERC,Corrective eyeglasses and contact lenses,1,core,cpi,cpi,CUUR0000SEMC03:none,,,,,0,0,0,0,0,CPI Eyeglasses and eyecare
+69,DEBKRG,DEBKRC,Educational books (96),1,core,cpi,cpi,CUUR0000SEEA:none,,,,,0,0,0,0,0,CPI Educational books and supplies
+70,DLUGRG,DLUGRC,Luggage and similar personal items (part of 119),1,core,cpi,cpi,CUSR0000SEGE:bls,,,,,0,0,0,0,0,CPI Miscellaneous personal goods
+71,DTCERG,DTCERC,Telephone and related communication equipment,1,core,cpi,cpi,CUSR0000SEEE04:bls,,,,,0,0,0,0,0,"CPI Telephone hardware, calculators, and other consumer information items"
+77,DGRARG,DGRARC,Cereals,1,food,cpi,cpi,CUSR0000SEFA:bls,,,,,0,0,0,0,0,CPI Cereals and cereal products
+78,DBAKRG,DBAKRC,Bakery products,1,food,cpi,cpi,CUUR0000SEFB:none,,,,,0,0,0,0,0,CPI Bakery products
+80,DBEERG,DBEERC,Beef and veal,1,food,cpi,cpi,CUSR0000SEFC:bls,,,,,0,0,0,0,0,CPI Beef and veal
+81,DPORRG,DPORRC,Pork,1,food,cpi,cpi,CUSR0000SEFD:bls,,,,,0,0,0,0,0,CPI Pork
+82,DMEARG,DMEARC,Other meats,1,food,cpi,cpi,CUSR0000SEFE:bls,,,,,0,0,0,0,0,CPI Other meats
+83,DPOURG,DPOURC,Poultry,1,food,cpi,cpi,CUSR0000SEFF:bls,,,,,0,0,0,0,0,CPI Poultry
+84,DFISRG,DFISRC,Fish and seafood,1,food,cpi,cpi,CUUR0000SEFG:none,,,,,0,0,0,0,0,CPI Fish and seafood
+86,DMILRG,DMILRC,Fresh milk,1,food,cpi,cpi,CUUR0000SEFJ01:none,,,,,0,0,0,0,0,CPI Milk
+87,DDAIRG,DDAIRC,Processed dairy products,1,food,composite,cpi,CUUR0000SEFJ02:none;CUSR0000SEFJ03:bls;CUSR0000SEFJ04:bls,fit,2015-01,,,0,0,0,0,0,"BEA composite of CPIs cheese (NSA), ice cream (SA), other dairy (SA)"
+88,DGGSRG,DGGSRC,Eggs,1,food,cpi,cpi,CUSR0000SEFH:bls,,,,,0,0,0,0,0,CPI Eggs
+89,DFATRG,DFATRC,Fats and oils,1,food,cpi,cpi,CUSR0000SEFS:bls,,,,,0,0,0,0,0,CPI Fats and oils
+91,DFRURG,DFRURC,Fruit (fresh),1,food,cpi,cpi,CUSR0000SEFK:bls,,,,,0,0,0,0,0,CPI Fresh fruits
+92,DVEGRG,DVEGRC,Vegetables (fresh),1,food,cpi,cpi,CUSR0000SEFL:bls,,,,,0,0,0,0,0,CPI Fresh vegetables
+93,DPFVRG,DPFVRC,Processed fruits and vegetables,1,food,cpi,cpi,CUSR0000SEFM:bls,,,,,0,0,0,0,0,CPI Processed fruits and vegetables
+94,DSWERG,DSWERC,Sugar and sweets,1,food,cpi,cpi,CUSR0000SEFR:bls,,,,,0,0,0,0,0,CPI Sugar and sweets
+95,DOFDRG,DOFDRC,"Food products, not elsewhere classified",1,food,composite,cpi,CUSR0000SEFT01:bls;CUSR0000SEFT02:bls;CUSR0000SEFT03:bls;CUSR0000SEFT04:bls;CUUR0000SEFT05:none;CUUR0000SEFT06:none,fit,2015-01,,,0,0,0,0,0,"unpublished detail deflated by CPI soups, frozen prepared, snacks, spices, baby food, other misc foods"
+97,DCTMRG,DCTMRC,"Coffee, tea, and other beverage materials",1,food,cpi,cpi,CUSR0000SEFP:bls,,,,,0,0,0,0,0,CPI Beverage materials including coffee and tea
+98,DJNBRG,DJNBRC,"Mineral waters, soft drinks, and vegetable juices",1,food,cpi,cpi,CUSR0000SEFN:bls,,,,,0,0,0,0,0,CPI Juices and nonalcoholic drinks
+100,DLIQRG,DLIQRC,Spirits,1,food,cpi,cpi,CUUR0000SEFW02:none,,,,,0,0,0,0,0,CPI Distilled spirits at home
+101,DWINRG,DWINRC,Wine,1,food,cpi,cpi,CUSR0000SEFW03:bls,,,,,0,0,0,0,0,CPI Wine at home
+102,DMLTRG,DMLTRC,Beer,1,food,cpi,cpi,CUUR0000SEFW01:none,,,,,0,0,0,0,0,"CPI Beer, ale, and other malt beverages at home"
+103,DFFDRG,DFFDRC,Food produced and consumed on farms (6),1,food,nonmarket,none,,,,,,0,0,0,0,1,"USDA prices received by farmers composite, SA by BEA — no monthly source we carry; filled"
+106,DWGCRG,DWGCRC,Women's and girls' clothing (10),1,core,cpi,cpi,CUSR0000SAA2:bls,,,,,0,0,0,0,0,CPI Women's and girls' apparel
+107,DMBCRG,DMBCRC,Men's and boys' clothing (11),1,core,cpi,cpi,CUSR0000SAA1:bls,,,,,0,0,0,0,0,CPI Men's and boys' apparel
+108,DCICRG,DCICRC,Children's and infants' clothing (12),1,core,cpi,cpi,CUSR0000SEAF:bls,,,,,0,0,0,0,0,CPI Infants' and toddlers' apparel
+110,DCSMRG,DCSMRC,Clothing materials,1,core,cpi,cpi,CUUR0000SERE02:none,,,,,0,0,0,0,0,"CPI Sewing machines, fabrics, and supplies"
+111,DMICRG,DMICRC,Standard clothing issued to military personnel,1,core,ppi,ppi,WPU0381:none,,,,,0,0,0,0,1,"PPI apparel (commodity), NSA"
+112,DSHURG,DSHURC,Shoes and other footwear,1,core,cpi,cpi,CUSR0000SEAE:bls,,,,,0,0,0,0,0,CPI Footwear
+115,DGASRG,DGASRC,Gasoline and other motor fuel,1,energy,cpi,cpi,CUSR0000SETB:bls,,,,,0,0,0,0,0,CPI Motor fuel
+116,DLUBRG,DLUBRC,Lubricants and fluids,1,energy,cpi,cpi,CUUR0000SS47021:none,,,,,0,0,0,0,0,"CPI Motor oil, coolant, and fluids"
+118,DOILRG,DOILRC,Fuel oil,1,energy,cpi,cpi,CUSR0000SEHE01:bls,,,,,0,0,0,0,0,CPI Fuel oil
+119,DLPFRG,DLPFRC,Other fuels,1,energy,cpi,cpi,CUSR0000SEHE02:bls,,,,,0,0,0,0,0,"CPI Propane, kerosene, and other firewood"
+123,DRXDRG,DRXDRC,Prescription drugs,1,core,cpi,cpi,CUUR0000SEMF01:none,,,,,0,0,0,0,0,CPI Prescription drugs
+124,DNRDRG,DNRDRC,Nonprescription drugs,1,core,cpi,cpi,CUSR0000SEMF02:bls,,,,,0,0,0,0,0,CPI Nonprescription drugs
+125,DOMPRG,DOMPRC,Other medical products,1,core,cpi,cpi,CUUR0000SEMG:none,,,,,0,0,0,0,0,CPI Medical equipment and supplies
+127,DDOLRG,DDOLRC,"Games, toys, and hobbies",1,core,cpi,cpi,CUSR0000SERE01:bls,,,,,0,0,0,0,0,CPI Toys
+128,DPRPRG,DPRPRC,Pets and related products,1,core,cpi,cpi,CUUR0000SERB01:none,,,,,0,0,0,0,0,CPI Pets and pet products
+129,DFLORG,DFLORC,"Flowers, seeds, and potted plants",1,core,cpi,cpi,CUSR0000SEHL02:bls,,,,,0,0,0,0,0,CPI Indoor plants and flowers
+130,DFLMRG,DFLMRC,Film and photographic supplies,1,core,cpi,cpi,CUUR0000SS61021:none,,,,,0,0,0,0,0,CPI Film and photographic supplies
+132,DCLERG,DCLERC,Household cleaning products,1,core,cpi,cpi,CUUR0000SEHN01:none,,,,,0,0,0,0,0,CPI Household cleaning products
+133,DPAPRG,DPAPRC,Household paper products,1,core,cpi,cpi,CUUR0000SEHN02:none,,,,,0,0,0,0,0,CPI Household paper products
+134,DLINRG,DLINRC,Household linens,1,core,cpi,cpi,CUSR0000SEHH03:bls,,,,,0,0,0,0,0,CPI Other linens
+135,DSEWRG,DSEWRC,Sewing items,1,core,cpi,cpi,CUUR0000SERE02:none,,,,,0,0,0,0,0,"CPI Sewing machines, fabrics, and supplies"
+136,DMHPRG,DMHPRC,Miscellaneous household products,1,core,cpi,cpi,CUUR0000SEHN03:none,,,,,0,0,0,0,0,CPI Miscellaneous household products
+138,DOPHRG,DOPHRC,"Hair, dental, shaving, and miscellaneous personal care products except electrical products",1,core,cpi,cpi,CUUR0000SEGB01:none,,,,,0,0,0,0,0,"CPI Hair, dental, shaving, and miscellaneous personal care products"
+139,DCOSRG,DCOSRC,Cosmetic / perfumes / bath / nail preparations and implements,1,core,cpi,cpi,CUUR0000SEGB02:none,,,,,0,0,0,0,0,CPI Cosmetics/perfumes/bath/nail preparations and implements
+140,DEAPRG,DEAPRC,Electric appliances for personal care,1,core,cpi,cpi,CUUR0000SEGB01:none,,,,,0,0,0,0,0,"CPI Hair, dental, shaving, and miscellaneous personal care products"
+141,DTOBRG,DTOBRC,Tobacco (127),1,core,cpi,cpi,CUUR0000SEGA:none,,,,,0,0,0,0,0,CPI Tobacco and smoking products
+143,DMAGRG,DMAGRC,Newspapers and periodicals,1,core,cpi,cpi,CUUR0000SERG01:none,,,,,0,0,0,0,0,CPI Newspapers and magazines
+144,DSTYRG,DSTYRC,Stationery and miscellaneous printed materials,1,core,cpi,cpi,CUSR0000SS33032:bls,,,,,0,0,0,0,0,"CPI Stationery, stationery supplies, and gift wrap"
+147,DARTRG,DARTRC,Government employees' expenditures abroad,1,core,nonmarket,none,,,,,,0,0,0,0,1,BEA index for installation support services
+148,DARSRG,DARSRC,Private employees' expenditures abroad,1,core,nonmarket,none,,,,,,0,0,0,0,1,BEA index for installation support services
+149,DREMRG,DREMRC,Less: Personal remittances in kind to nonresidents,-1,core,cpi,cpi,CUSR0000SAC:bls,,,,,0,0,0,0,1,CPI Commodities
+155,DTMHRG,DTMHRC,Tenant-occupied mobile homes,1,core,cpi,cpi,CUSR0000SEHA:bls,,,,,0,1,1,0,0,CPI Rent of primary residence
+156,IA000629,LA000629,Tenant-occupied stationary homes and landlord durables,1,core,cpi,cpi,CUSR0000SEHA:bls,,,,,0,1,1,0,0,"tenant-occupied stationary homes incl. landlord durables: CPI rent of primary residence (landlord durables = CPI major appliances, tiny)"
+161,DOMHRG,DOMHRC,Owner-occupied mobile homes,1,core,cpi,cpi,CUSR0000SEHC01:bls,,,,,0,1,1,0,0,CPI Owners' equivalent rent of primary residence
+162,DOSTRG,DOSTRC,Owner-occupied stationary homes,1,core,cpi,cpi,CUSR0000SEHC01:bls,,,,,0,1,1,0,0,CPI Owners' equivalent rent of primary residence
+163,DFARRG,DFARRC,Rental value of farm dwellings (22),1,core,cpi,cpi,CUSR0000SEHC:bls,,,,,0,1,1,0,1,farm dwellings: 'out months' based on CPI OER
+164,DGRHRG,DGRHRC,Group housing (23),1,core,cpi,cpi,CUSR0000SEHA:bls,,,,,0,1,1,0,0,CPI Rent of primary residence
+167,DWSMRG,DWSMRC,Water supply and sewage maintenance,1,core,cpi,cpi,CUUR0000SEHG01:none,,,,,0,0,1,0,0,CPI Water and sewage maintenance
+168,DREFRG,DREFRC,Garbage and trash collection,1,core,cpi,cpi,CUUR0000SEHG02:none,,,,,0,0,1,0,0,CPI Garbage and trash collection
+170,DELCRG,DELCRC,Electricity (27),1,energy,cpi,cpi,CUSR0000SEHF01:bls,,,,,0,0,1,0,0,CPI Electricity
+171,DGHERG,DGHERC,Natural gas (28),1,energy,cpi,cpi,CUSR0000SEHF02:bls,,,,,0,0,1,0,0,CPI Utility (piped) gas service
+174,DPHYRG,DPHYRC,Physician services (44),1,core,ppi,ppi,PCU621111621111:own,,,,,0,0,1,0,0,"PPI offices of physicians, SA by BEA"
+175,DDENRG,DDENRC,Dental services (45),1,core,cpi,cpi,CUUR0000SEMC02:none,,,,,0,0,1,0,0,CPI Dental services
+177,DHHCRG,DHHCRC,Home health care,1,core,ppi,ppi,PCU621610621610:own,,,,,0,0,1,0,0,"PPI home health care services, SA by BEA"
+178,DMLBRG,DMLBRC,Medical laboratories,1,core,composite,ppi,PCU621511621511:none;PCU621512621512:none,fit,2015-01,,,0,0,1,0,0,"PPI medical labs + diagnostic imaging centers, NSA"
+180,DOMSRG,DOMSRC,Specialty outpatient care facilities and health and allied services,1,core,cpi,cpi,CUUR0000SEMC04:none,,,,CUSR0000SEMC,0,0,1,0,0,CPI Services by other medical professionals
+181,DOMORG,DOMORC,All other professional medical services,1,core,cpi,cpi,CUUR0000SEMC04:none,,,,CUSR0000SEMC,0,0,1,0,0,CPI Services by other medical professionals
+184,DNPHRG,DNPHRC,Nonprofit hospitals' services to households,1,core,ppi,ppi,PCU622110622110:own,,,,,0,0,1,0,0,"PPI general medical & surgical hospitals, SA by BEA"
+185,DFPHRG,DFPHRC,Proprietary hospitals,1,core,ppi,ppi,PCU622110622110:own,,,,,0,0,1,0,0,"PPI hospitals, SA by BEA"
+186,DGVHRG,DGVHRC,Government hospitals,1,core,ppi,ppi,PCU622110622110:own,,,,,0,0,1,0,0,"PPI hospitals, SA by BEA"
+188,DNPNRG,DNPNRC,Nonprofit nursing homes' services to households,1,core,ppi,ppi,PCU623110623110:own,,,,,0,0,1,0,0,"PPI nursing care facilities, SA by BEA"
+189,DFPNRG,DFPNRC,Proprietary and government nursing homes,1,core,ppi,ppi,PCU623110623110:own,,,,,0,0,1,0,0,"PPI nursing care facilities, SA by BEA"
+192,DVMRRG,DVMRRC,Motor vehicle maintenance and repair (60),1,core,cpi,cpi,CUUR0000SETD:none,,,,,0,0,1,0,0,CPI Motor vehicle maintenance and repair
+195,DALERG,DALERC,Auto leasing,1,core,cpi,cpi,CUUR0000SETA03:none,,,,CUSR0000SETA04,0,0,1,0,0,CPI Leased cars and trucks
+196,DTLERG,DTLERC,Truck leasing,1,core,cpi,cpi,CUUR0000SETA03:none,,,,CUSR0000SETA04,0,0,1,0,0,CPI Leased cars and trucks
+197,DMVRRG,DMVRRC,Motor vehicle rental,1,core,cpi,cpi,CUSR0000SETA04:bls,,,,,0,0,1,0,0,CPI Car and truck rental
+198,DPFTRG,DPFTRC,Parking fees and tolls,1,core,cpi,cpi,CUSR0000SS52051:bls,,,,,0,0,1,0,0,CPI Parking fees and tolls
+201,DIRRRG,DIRRRC,Railway transportation,1,core,cpi,cpi,CUSR0000SETG02:bls,,,,,0,0,1,0,0,CPI Other intercity transportation
+203,DIBURG,DIBURC,Intercity buses,1,core,cpi,cpi,CUSR0000SETG02:bls,,,,,0,0,1,0,0,CPI Other intercity transportation
+204,DTAXRG,DTAXRC,Taxicabs and ride sharing services,1,core,cpi,cpi,CUUR0000SETG03:none,,,,,0,0,1,0,0,CPI Intracity transportation
+205,DIMTRG,DIMTRC,Intracity mass transit,1,core,cpi,cpi,CUUR0000SETG03:none,,,,,0,0,1,0,0,CPI Intracity transportation
+206,DORTRG,DORTRC,Other road transportation service,1,core,cpi,cpi,CUSR0000SETG02:bls,,,,,0,0,1,0,0,CPI Other intercity transportation
+207,DAITRG,DAITRC,Air transportation (64),1,core,ppi,ppi,PCU4811114811111:own,,,,,0,0,1,0,0,"PPI domestic scheduled passenger air transportation, SA by BEA"
+208,DWATRG,DWATRC,Water transportation (65),1,core,cpi,cpi,CUSR0000SETG02:bls,,,,,0,0,1,0,0,CPI Other intercity transportation
+211,DMDFRG,DMDFRC,Membership clubs and participant sports centers,1,core,cpi,cpi,CUSR0000SERF01:bls,,,,,0,0,1,0,0,"CPI Club membership for shopping clubs, fraternal, or other organizations, or participant sports fees"
+212,DORSRG,DORSRC,"Amusement parks, campgrounds, and related recreational services",1,core,cpi,cpi,CUSR0000SERF:bls,,,,,0,0,1,0,0,CPI Other recreation services
+214,DMOVRG,DMOVRC,Motion picture theaters,1,core,cpi,cpi,CUUR0000SS62031:none,,,,,0,0,1,0,0,"CPI Admission to movies, theaters, and concerts"
+215,DLIGRG,DLIGRC,"Live entertainment, excluding sports",1,core,cpi,cpi,CUUR0000SS62031:none,,,,,0,0,1,0,0,"CPI Admission to movies, theaters, and concerts"
+216,DSPERG,DSPERC,Spectator sports,1,core,cpi,cpi,CUUR0000SS62032:none,,,,,1,0,1,0,0,CPI admission to sporting events + judgmental trend
+217,DMUSRG,DMUSRC,Museums and libraries,1,core,cpi,cpi,CUUR0000SS62031:none,,,,,0,0,1,0,0,"CPI Admission to movies, theaters, and concerts"
+219,DCTVRG,DCTVRC,"Cable, satellite, and other live television services",1,core,cpi,cpi,CUSR0000SERA02:bls,,,,,0,0,1,0,0,"CPI Cable, satellite, and live streaming television service"
+220,DFDVRG,DFDVRC,Photo processing,1,core,cpi,cpi,CUUR0000SS62052:none,,,,,0,0,1,0,0,CPI Photo processing
+221,DPICRG,DPICRC,Photo studios,1,core,cpi,cpi,CUUR0000SS62051:none,,,,,0,0,1,0,0,CPI Photographer fees
+222,DAPIRG,DAPIRC,"Repair and rental of audio-visual, photographic, and information processing equipment",1,core,cpi,cpi,CUSR0000SERA:bls,,,,,0,0,1,0,0,CPI Video and audio
+224,IA000233,LA000233,Video streaming and rental,1,core,cpi,cpi,CUUR0000SS62055:none,,,,,0,0,1,0,0,CPI Subscription and rental of video and video games
+225,IA000232,LA000232,Audio streaming and radio services (including satellite radio),1,core,cpi,cpi,CUUR0000SERA06:none,,,,,0,0,1,0,0,CPI Recorded music and music subscriptions
+227,DCASRG,DCASRC,Casino gambling,1,core,cpi,cpi,CUSR0000SA0:bls,,,,,0,0,1,0,1,gambling: CPI all items
+228,DLOTRG,DLOTRC,Lotteries,1,core,cpi,cpi,CUSR0000SA0:bls,,,,,0,0,1,0,1,gambling: CPI all items
+229,DPARRG,DPARRC,Pari-mutuel net receipts,1,core,cpi,cpi,CUSR0000SA0:bls,,,,,0,0,1,0,1,gambling: CPI all items
+231,DVETRG,DVETRC,Veterinary and other services for pets,1,core,cpi,cpi,CUSR0000SERB02:bls,,,,,0,0,1,0,0,CPI Pet services including veterinary
+232,DHOLRG,DHOLRC,Package tours,1,core,cpi,cpi,CUSR0000SERF:bls,,,,,0,0,1,0,0,CPI Other recreation services
+233,DRRERG,DRRERC,Maintenance and repair of recreational vehicles and sports equipment,1,core,cpi,cpi,CUUR0000SERC:none,,,,,0,0,1,0,0,CPI Sporting goods
+239,DESLRG,DESLRC,Elementary and secondary school lunches,1,core,cpi,cpi,CUUR0000SEFV03:none,,,,,0,0,1,0,0,CPI Food at employee sites and schools
+240,DHSLRG,DHSLRC,Higher education school lunches,1,core,cpi,cpi,CUUR0000SEFV01:none,,,,,0,0,1,0,0,CPI Full service meals and snacks
+242,DMLSRG,DMLSRC,Meals at limited service eating places,1,core,cpi,cpi,CUUR0000SEFV02:none,,,,,0,0,1,0,0,CPI Limited service meals and snacks
+243,DMOERG,DMOERC,Meals at other eating places,1,core,cpi,cpi,CUUR0000SEFV01:none,,,,,0,0,1,0,0,CPI Full service meals and snacks
+244,DMDPRG,DMDPRC,Meals at drinking places,1,core,cpi,cpi,CUUR0000SEFV01:none,,,,,0,0,1,0,0,CPI Full service meals and snacks
+245,DAPMRG,DAPMRC,Alcohol in purchased meals,1,core,cpi,cpi,CUUR0000SEFX:none,,,,,0,0,1,0,0,CPI Alcoholic beverages away from home
+247,DCFDRG,DCFDRC,Food supplied to civilians,1,core,cpi,cpi,CUUR0000SEFV01:none,,,,,0,0,1,0,1,CPI Full service meals and snacks
+248,DMFDRG,DMFDRC,Food supplied to military,1,core,cpi,cpi,CUUR0000SEFV01:none,,,,,0,0,1,0,1,CPI Full service meals and snacks
+250,DHOTRG,DHOTRC,Hotels and motels,1,core,cpi,cpi,CUSR0000SEHB02:bls,,,,,0,0,1,0,0,CPI Other lodging away from home including hotels and motels
+251,DSCHRG,DSCHRC,Housing at schools,1,core,cpi,cpi,CUSR0000SEHB01:bls,,,,,0,0,1,0,0,"CPI lodging while at school (BEA: housing at school, excluding board)"
+254,DIMPRG,DIMPRC,Financial services furnished without payment (107),1,core,nonmarket,none,,,,,,0,0,1,0,1,"financial services furnished without payment (FISIM): implicit, quantity extrapolation; single leaf replacing 255-257"
+259,DFEERG,DFEERC,Financial service charges and fees,1,core,cpi,cpi,CUUR0000SS68021:none,,,,,0,0,1,0,0,CPI Checking account and other bank services
+262,DDCERG,DDCERC,Exchange-listed equities,1,core,ppi,ppi,PCU5231505231501011:none,,,,,0,0,1,0,0,"PPI brokerage services, equities and ETFs, NSA"
+263,DDCORG,DDCORC,Other direct commissions,1,core,ppi,ppi,PCU5231505231501012:none,,,,,0,0,1,0,0,"PPI brokerage services, all other securities, NSA"
+265,DICVRG,DICVRC,Over-the-counter equity securities,1,core,ppi,ppi,PCU5231505231502011:none,,,,,0,0,1,0,0,"PPI dealer transactions, equity securities, NSA"
+266,DICORG,DICORC,Other imputed commissions,1,core,ppi,ppi,PCU5231505231502012:none,,,,,0,0,1,0,0,"PPI dealer transactions, debt securities and all other trading, NSA"
+267,DMUTRG,DMUTRC,Mutual fund sales charges,1,core,ppi,ppi,PCU523150523150102:none,,,,,0,0,1,0,1,"PPI other securities related services incl. margin lending and mutual fund sales, NSA"
+268,DPMIRG,DPMIRC,Portfolio management and investment advice services,1,core,model,none,,,,,,0,0,1,0,1,"portfolio management & investment advice: since Sep-2026 implicit (CES hours quantity, QSS nominal, market indicators in out-months). No monthly source; filled"
+269,DTRURG,DTRURC,"Trust, fiduciary, and custody activities",1,core,ppi,ppi,PCU5221105221103:none,,,,,0,0,1,0,1,"PPI commercial bank trust services, NSA"
+271,DLIFRG,DLIFRC,Life insurance (110),1,core,nonmarket,none,,,,,,0,0,1,0,1,"life insurance: BEA input cost index (CES, PPI, CPI)"
+273,DFIPRG,DFIPRC,Household insurance premiums and premium supplements,1,core,ppi,ppi,PCU5241265241262:own,,,,,0,0,1,0,0,"PPI homeowner's insurance, SA by BEA"
+274,DFIBRG,DFIBRC,Less: Household insurance normal losses,-1,core,ppi,ppi,PCU5241265241262:own,,,,,0,0,1,0,0,"PPI homeowner's insurance, SA by BEA (normal losses, negative)"
+276,DMINRG,DMINRC,Medical care and hospitalization,1,core,ppi,ppi,PCU524114524114:own,,,,,0,0,1,0,1,"net medical care & hospitalization insurance: premiums and benefits both deflated by PPI direct health & medical insurance carriers, SA by BEA"
+277,DIINRG,DIINRC,Income loss,1,core,cpi,cpi,CUSR0000SA0:bls,,,,,0,0,1,0,1,income loss insurance: CPI all items
+278,DPWCRG,DPWCRC,Workers' compensation,1,core,ppi,ppi,PCU5241265241266:none,,,,,0,0,1,0,1,"workers' compensation: PPI WC insurance, NSA"
+279,DTINRG,DTINRC,Net motor vehicle and other transportation insurance (116),1,core,ppi,ppi,PCU5241265241261:none,,,,,0,0,1,0,1,"motor vehicle insurance: PPI private passenger auto insurance, NSA"
+283,DLOCRG,DLOCRC,"Land-line telephone services, local charges",1,core,cpi,cpi,CUUR0000SEED04:own,,,,CUUR0000SEED,0,0,1,0,0,"land-line local: CPI residential telephone services, SA by BEA (no BLS SA series)"
+284,DLDTRG,DLDTRC,"Land-line telephone services, long-distance charges",1,core,cpi,cpi,CUUR0000SEED04:own,,,,CUUR0000SEED,0,0,1,0,0,land-line long distance: CPI residential telephone services
+285,DCELRG,DCELRC,Cellular telephone services,1,core,composite,cpi,CUUR0000SEED03:none;CUUR0000SSEE041:none,fit,2015-01,,,0,0,1,0,0,fixed-weighted CPI wireless + CPI smartphones
+287,DPSTRG,DPSTRC,First-class postal service (by U.S. Postal Service),1,core,cpi,cpi,CUSR0000SEEC01:bls,,,,,0,0,1,0,0,CPI Postage
+288,DODSRG,DODSRC,Other delivery services (by non-U.S. postal facilities),1,core,cpi,cpi,CUSR0000SEEC02:bls,,,,,0,0,1,0,0,CPI Delivery services
+289,DINTRG,DINTRC,Internet access (72),1,core,cpi,cpi,CUUR0000SEEE03:none,,,,,0,0,1,0,0,CPI Internet services and electronic information providers
+292,DGEDRG,DGEDRC,Proprietary and public higher education,1,core,cpi,cpi,CUSR0000SEEB01:bls,,,,,0,0,1,0,0,CPI College tuition and fees
+293,DPEDRG,DPEDRC,Nonprofit private higher education services to households,1,core,cpi,cpi,CUSR0000SEEB01:bls,,,,,0,0,1,0,0,CPI College tuition and fees
+295,DESCRG,DESCRC,Elementary and secondary schools,1,core,cpi,cpi,CUSR0000SEEB02:bls,,,,,0,0,1,0,0,CPI Elementary and high school tuition and fixed fees
+296,DNSCRG,DNSCRC,Day care and nursery schools,1,core,cpi,cpi,CUSR0000SEEB03:bls,,,,,0,0,1,0,0,CPI Day care and preschool
+297,DVEDRG,DVEDRC,Commercial and vocational schools (99),1,core,cpi,cpi,CUSR0000SEEB04:bls,,,,,0,0,1,0,0,CPI Technical and business school tuition and fees
+299,DGALRG,DGALRC,Legal services,1,core,composite,ppi,PCU5411105411103:own;PCU541110541110C:own;PCU5411105411106:own;PCU5411105411102:own;PCU541110541110A:own,fit,2021-01,,,0,0,1,0,0,"BEA Sep-2026: composite of PPIs civil negligence, other legal, wills/estate, real estate, labor & employment legal services; SA by BEA"
+301,DTAPRG,DTAPRC,Tax preparation and other related services,1,core,cpi,cpi,CUSR0000SS68023:bls,,,,CUSR0000SEGD,1,0,1,0,0,CPI Tax preparation and other accounting fees & judgmental trend
+302,DGENRG,DGENRC,Employment agency services,1,core,ppi,ppi,PCU5613805613802:none,,,,,0,0,1,0,0,"PPI employment placement services, NSA"
+303,DTHERG,DTHERC,Other personal business services,1,core,cpi,cpi,CUUR0000SEGD:none,,,,,0,0,1,0,0,CPI Miscellaneous personal services
+304,DUNSRG,DUNSRC,Labor organization dues,1,core,nonmarket,none,,,,,,0,0,1,0,1,labor organization dues: BEA input cost index
+305,DAXSRG,DAXSRC,Professional association dues,1,core,composite,ppi,PCU5411105411103:own;PCU541110541110C:own;PCU5411105411106:own;PCU5411105411102:own;PCU541110541110A:own,fit,2021-01,,,0,0,1,0,0,professional association dues: same legal PPI composite
+306,DFUNRG,DFUNRC,Funeral and burial services,1,core,cpi,cpi,CUUR0000SEGD02:none,,,,,0,0,1,0,0,CPI Funeral expenses
+309,DBBBRG,DBBBRC,Hairdressing salons and personal grooming establishments,1,core,cpi,cpi,CUUR0000SEGC01:none,,,,,0,0,1,0,0,CPI Haircuts and other personal care services
+310,DMPCRG,DMPCRC,Miscellaneous personal care services,1,core,cpi,cpi,CUUR0000SEGD04:none,,,,,0,0,1,0,0,CPI Apparel services other than laundry and drycleaning
+312,DDRYRG,DDRYRC,Laundry and drycleaning services,1,core,cpi,cpi,CUUR0000SEGD03:none,,,,,0,0,1,0,0,CPI Laundry and drycleaning services
+313,DLGRRG,DLGRRC,"Clothing repair, rental, and alterations",1,core,cpi,cpi,CUUR0000SEGD04:none,,,,,0,0,1,0,0,CPI Apparel services other than laundry and drycleaning
+314,DSCLRG,DSCLRC,Repair and hire of footwear,1,core,cpi,cpi,CUUR0000SEGD04:none,,,,,0,0,1,0,0,CPI Apparel services other than laundry and drycleaning
+316,DCHCRG,DCHCRC,Child care,1,core,cpi,cpi,CUSR0000SEEB03:bls,,,,,0,0,1,0,0,CPI Day care and preschool
+318,DELDRG,DELDRC,Homes for the elderly,1,core,nonmarket,none,,,,,,0,0,1,0,1,"BEA input cost index (CES, PPI, CPI)"
+319,DMENRG,DMENRC,Residential mental health and substance abuse,1,core,nonmarket,none,,,,,,0,0,1,0,1,"BEA input cost index (CES, PPI, CPI)"
+320,DFAMRG,DFAMRC,Individual and family services,1,core,nonmarket,none,,,,,,0,0,1,0,1,"BEA input cost index (CES, PPI, CPI)"
+321,DVOCRG,DVOCRC,Vocational rehabilitation services,1,core,nonmarket,none,,,,,,0,0,1,0,1,"BEA input cost index (CES, PPI, CPI)"
+322,DCFORG,DCFORC,Community food and housing / emergency / other relief services,1,core,nonmarket,none,,,,,,0,0,1,0,1,"BEA input cost index (CES, PPI, CPI)"
+323,DSIARG,DSIARC,"Other social assistance, not elsewere classified",1,core,nonmarket,none,,,,,,0,0,1,0,1,"BEA input cost index (CES, PPI, CPI)"
+324,DSADRG,DSADRC,Social advocacy and civic and social organizations,1,core,nonmarket,none,,,,,,0,0,1,0,1,"BEA input cost index (CES, PPI, CPI)"
+325,DRELRG,DRELRC,Religious organizations' services to households,1,core,nonmarket,none,,,,,,0,0,1,0,1,"BEA input cost index (CES, PPI, CPI)"
+326,DGIVRG,DGIVRC,Foundations and grantmaking and giving services to households,1,core,nonmarket,none,,,,,,0,0,1,0,1,"BEA input cost index (CES, PPI, CPI)"
+328,DDMSRG,DDMSRC,Domestic services,1,core,composite,cpi,CUUR0000SEHP01:none;CUSR0000SAF11:bls;CUUR0000SEGD03:none,fit,2015-01,,CUSR0000SAH3,0,0,1,0,0,"CPIs domestic services (NSA, unpublished recently → flat), food at home (SA), laundry & dry cleaning (NSA)"
+329,DMSERG,DMSERC,"Moving, storage, and freight services",1,core,cpi,cpi,CUSR0000SEHP03:bls,,,,,0,0,1,0,0,"CPI Moving, storage, and freight expenses"
+330,DFRERG,DFRERC,"Repair of furniture, furnishings, and floor coverings",1,core,cpi,cpi,CUUR0000SEHP04:none,,,,,0,0,1,0,0,CPI Repair of household items
+331,DERERG,DERERC,Repair of household appliances,1,core,cpi,cpi,CUUR0000SEHP04:none,,,,,0,0,1,0,0,CPI Repair of household items
+332,DMHSRG,DMHSRC,Other household services,1,core,cpi,cpi,CUUR0000SEHP:none,,,,CUSR0000SAH3,0,0,1,0,0,CPI Household operations
+335,DAFTRG,DAFTRC,Passenger fares for foreign travel,1,core,composite,import,EIUIV142:own;PCU4811114811112:own,fit,2015-01,,,0,0,1,0,0,weighted avg of import price index air passenger fares + PPI international scheduled passenger air; SA by BEA
+336,DUSTRG,DUSTRC,U.S. travel outside the United States,1,core,nonmarket,none,,,,,,0,0,1,0,0,foreign CPIs exchange-rate adjusted (BEA composite)
+337,DUSSRG,DUSSRC,U.S. student expenditures,1,core,nonmarket,none,,,,,,0,0,1,0,0,foreign CPIs exchange-rate adjusted (BEA composite)
+339,DFTURG,DFTURC,Foreign travel in the United States,-1,core,composite,ppi,CUSR0000SEHB02:bls;CUSR0000SEFV:bls;PCU4811114811111:own;PCU5615105615101:none,fit,2015-01,,,0,0,1,0,0,"foreign travel in the U.S.: travel-related CPIs (lodging, food away) + PPI domestic air + PPI travel agencies (approximation of BEA composite)"
+340,DMEFRG,DMEFRC,Medical expenditures of foreigners,-1,core,cpi,cpi,CUUR0000SEMD:none,,,,,0,0,1,0,0,medical expenditures of foreigners: CPI hospital and related services (NSA per Sep-2026 table)
+341,DEFSRG,DEFSRC,Expenditures of foreign students in the United States,-1,core,cpi,cpi,CUSR0000SEEB01:bls,,,,,0,0,1,0,0,foreign students: CPI college tuition
+342,DNPIRG,DNPIRC,Final consumption expenditures of nonprofit institutions serving households (NPISHs) (132),1,core,model,none,,,,,,0,0,1,0,1,NPISH final consumption: gross output (input-cost indexes) less receipts from sales (household-services prices). Single leaf replacing 343-356; filled/modeled
