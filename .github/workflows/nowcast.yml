@@ -1,0 +1,65 @@
+name: Nowcast daily
+
+on:
+  schedule:
+    # 22:30 UTC on weekdays (5:30pm EST / 6:30pm EDT): after the day's BLS/BEA releases, the daily energy and market series, and the Cleveland Fed update.
+    - cron: "30 22 * * 1-5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# One run at a time: a later trigger queues behind the current run instead of racing it for the commits.
+concurrency:
+  group: nowcast-daily
+  cancel-in-progress: false
+
+jobs:
+  nowcast:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: nowcast/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r nowcast/requirements.txt
+
+      - name: Check out the data branch (vintage archive and nowcast run history)
+        run: nowcast/scripts/data_branch.sh start vintage origin
+
+      - name: Daily nowcast (ingest, nowcast, archive, build docs/data/nowcast.json)
+        id: run
+        continue-on-error: true
+        env:
+          BLS_CONTACT: ${{ secrets.BLS_CONTACT }}
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          NOWCAST_ARCHIVE: ${{ github.workspace }}/vintage
+        run: |
+          chmod +x nowcast/tools/x13/x13as_ascii
+          python nowcast/scripts/daily.py
+
+      - name: Commit the nowcast data to main
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data/nowcast.json
+          if git diff --cached --quiet; then echo "No change to docs/data/nowcast.json"; exit 0; fi
+          git commit -m "Nowcast $(date -u +%Y-%m-%d)"
+          for i in 1 2 3 4 5; do
+            git push && break
+            git pull --rebase --autostash origin main
+          done
+          git push  # fails the step if every retry was rejected
+
+      - name: Push the vintage archive and run history to branch data
+        run: nowcast/scripts/data_branch.sh finish vintage origin
+
+      - name: Fail the job if the nowcast run failed or had warnings (GitHub emails on failure)
+        if: steps.run.outcome != 'success'
+        run: exit 1
